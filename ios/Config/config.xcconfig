@@ -1,0 +1,8 @@
+PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_APPEND)
+
+BUNDLE_DISPLAY_NAME = MxShopee
+BUNDLE_IDENTIFIER = com.mendix.mxshopee
+
+RUNTIME_URL = https:\/\/kshitij-accp.apps.eu-1c.mendixcloud.com
+
+PRODUCT_NAME = MxShopee
