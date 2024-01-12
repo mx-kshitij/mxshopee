@@ -13,6 +13,7 @@ buildscript {
         firebaseMessagingVersion = "21.0.0"
         androidXCore = "1.6.0"
         androidXBrowser = "1.2.0"
+        kotlinVersion = '1.6.0'
     }
     repositories {
         google()
@@ -28,6 +29,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:7.2.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         apply from: file("../node_modules/@mendix/native/android/mendix.gradle"); applyMendixClassPaths(project)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -83,6 +85,9 @@ allprojects {
         }
         maven {
             url "https://maven.scijava.org/content/repositories/jcenter/"
+        }
+        maven {
+            url("$rootDir/../node_modules/detox/Detox-android")
         }
     }
 }
