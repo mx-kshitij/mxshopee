@@ -20,9 +20,11 @@ describe('Example login', () => {
     await device.disableSynchronization()
     await element(by.id('actionButton2')).tap();
     
+    await waitFor(element(by.id('text16'))).toBeVisible().withTimeout(15000);
+    await device.enableSynchronization();
 
-    // await device.enableSynchronization();
-    await waitFor(element(by.id('text16'))).toBeVisible().withTimeout(10000);
+    await element(by.id('actionButton1')).tap();
+    await element(by.id('listView1')).swipe('up', 'fast', 1);
     // await expect(element(by.id('text16'))).toBeVisible();
   });
 });
