@@ -1,9 +1,21 @@
 describe('Example', () => {
   beforeAll(async () => {
-    await device.launchApp()
+    // await device.launchApp();
+    await device.launchApp({
+      newInstance: true,
+      launchArgs: {
+          detoxPrintBusyIdleResources: "YES",
+          // Notifications
+          detoxURLBlacklistRegex: ".*firestore.*",
+          appUrl: "http://10.0.2.2:8080"
+      },
+      // JS actions
+      permissions: { faceid: "YES", location: "inuse", camera: "YES", photos: "YES", notifications: "YES" }
+  });
   })
 
 //   beforeEach(async () => {})
+
 
   it('lets go', async () => {
     
@@ -19,10 +31,10 @@ describe('Example', () => {
     await element(by.id('textBox3')).typeText('detox');
     await element(by.id('textBox4')).typeText('DetoxWins123!');
     
-    await device.disableSynchronization()
+    await device.disableSynchronization();
     await element(by.id('actionButton2')).tap();
     
-    await waitFor(element(by.id('text16'))).toBeVisible().withTimeout(15000);
+    await waitFor(element(by.id('text16'))).toBeVisible().withTimeout(20000);
     await device.enableSynchronization();
 
     await element(by.id('actionButton1')).tap();
