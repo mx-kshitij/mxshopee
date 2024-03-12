@@ -12,13 +12,13 @@ module.exports = {
   apps: {
     "ios.debug": {
       type: "ios.app",
-      binaryPath: "ios/build/Build/Products/Debug-iphonesimulator/example.app",
-      build: "xcodebuild -workspace ios/example.xcworkspace -scheme example -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+      binaryPath: "ios/build/Build/Products/Debug-iphonesimulator/MxShopeeDev.app",
+      build: "xcodebuild ARCHS=x86_64 -workspace ios/NativeTemplate.xcworkspace -scheme Dev -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
     },
     "ios.release": {
       type: "ios.app",
-      binaryPath: "ios/build/Build/Products/Release-iphonesimulator/example.app",
-      build: "xcodebuild -workspace ios/example.xcworkspace -scheme example -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
+      binaryPath: "ios/build/Build/Products/Release-iphonesimulator/MxShopee.app",
+      build: "xcodebuild ARCHS=x86_64 -workspace ios/NativeTemplate.xcworkspace -scheme nativeTemplate -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
     },
     "android.debug": {
       type: "android.apk",
@@ -37,7 +37,7 @@ module.exports = {
     simulator: {
       type: "ios.simulator",
       device: {
-        type: "iPhone 11"
+        type: "iPhone 15 Pro"
       }
     },
     android: {
@@ -48,9 +48,13 @@ module.exports = {
     }
   },
   configurations: {
-    "ios": {
+    "ios.debug": {
       device: "simulator",
-      app: "ios"
+      app: "ios.debug"
+    },
+    "ios.release": {
+      device: "simulator",
+      app: "ios.release"
     },
     "android.appstore": {
       device: "android",

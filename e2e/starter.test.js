@@ -7,7 +7,7 @@ describe('Example', () => {
           detoxPrintBusyIdleResources: "YES",
           // Notifications
           detoxURLBlacklistRegex: ".*firestore.*",
-          appUrl: "http://10.0.2.2:8080"
+          appUrl: "http://192.168.178.31:8080"
       },
       // JS actions
       permissions: { faceid: "YES", location: "inuse", camera: "YES", photos: "YES", notifications: "YES" }
